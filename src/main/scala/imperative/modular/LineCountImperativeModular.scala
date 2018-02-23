@@ -5,12 +5,12 @@ package imperative.modular
  * Depends on a suitable Output provider.
  */
 trait CountLines extends Task with Output[(Int, String)] {
-
+  /*handles the run */
   def run(input: Iterator[String]) = {
     var count = 0
     for (line <- input) {
       count += 1
-      doOutput((count, line))
+      doOutput((count, line)) // a method call to doOuput instead directly printing to the console
     }
   }
 }
